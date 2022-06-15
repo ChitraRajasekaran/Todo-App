@@ -1,0 +1,17 @@
+
+<h1>Todo List </h1>
+<%= form_with model:@todo do |form| %>
+    <div>
+        <ul>
+        <% @todos.each do |todo| %>
+            <%= form.check_box :Description %>
+            <a href="/todos/<%= todo.id %>">
+            <%= todo.Description %> <br>
+            </a>
+        <% end %>
+        </ul>
+<%end%>
+
+<%= link_to "New Todos", todos_new_path %>
+
+
